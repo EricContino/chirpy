@@ -46,7 +46,5 @@ func (cfg *apiConfig) handlerChirpsDelete(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	respondWithJSON(w, http.StatusNoContent, response{
-		chirpId: chirpID,
-	})
+	w.WriteHeader(http.StatusNoContent)
 }
